@@ -3,7 +3,7 @@ export const auth = async(request,response,next)=>{
  try{ 
   let cookies = request.cookies;
   let token = cookies.token;
-  let decodeMessage =  jwt.verify(token,"dflfdkjreiwreriovnxvmnvxcm@#12fdfre#");
+  let decodeMessage =  jwt.verify(token,process.env.SECRET);
   console.log(decodeMessage);
   next();
  }
