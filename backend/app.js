@@ -33,7 +33,7 @@ dotenv.config();
 const app = express();
 app.use(cors());
 app.use(cookieParser());
-mongoose.connect("mongodb://localhost:27017/bmi-app")
+mongoose.connect(process.env.MONGO)
     .then(() => {
         app.use(bodyParser.json());
         app.use(bodyParser.urlencoded({ extended: true }));
